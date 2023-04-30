@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Random Number Generator</title>
+    <style>
+      /* Add some basic styling to the input field and button */
+      input[type="number"],
+      button {
+        padding: 10px;
+        font-size: 20px;
+        margin: 10px;
+        border-radius: 5px;
+        border: none;
+        background-color: #f2f2f2;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Random Number Generator</h1>
+    <label for="range">Enter a range:</label>
+    <input type="number" id="range" name="range" min="1" max="100" />
+    <button onclick="generateRandomNumber()">Generate</button>
+    <p id="result"></p>
+    <script>
+      function generateRandomNumber() {
+        // Get the value from the input field
+        var range = document.getElementById("range").value;
+
+        // Generate a random number between 1 and the range
+        var randomNumber = Math.floor(Math.random() * range) + 1;
+
+        // Display the random number in the result paragraph
+        document.getElementById("result").innerHTML =
+          "Your random number is: " + randomNumber;
+      }
+    </script>
+  </body>
+</html>
